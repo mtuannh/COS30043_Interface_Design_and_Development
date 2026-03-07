@@ -16,8 +16,8 @@ body {
     justify-content: space-between;
     align-items: center;
     background: var(--primary);
-    padding: 10px 10px 10px 0px; /* Top, Right, Bottom, Left */
     color: white;
+    height: 80px;
 }
 
 .brand-name {
@@ -27,6 +27,7 @@ body {
     font-weight: 900;
     text-transform: uppercase;
     margin-left: 5px;
+    line-height: 1;
 }
 
 #logo { 
@@ -34,26 +35,35 @@ body {
 }
 
 .logo-container {
+    display: flex;
     margin-left: 10px;
+    align-items: center;
 }
 
 .nav-links { 
     display: flex; 
     list-style: none; 
+    height: 100%;
+}
+
+.nav-links li {
+    height: 100%;
 }
 
 .nav-links li a:hover {
     color: #f1994c; 
 }
 .nav-links li a {
+    display: flex;
     color: white;
+    padding: 0 20px; 
+    height: 100%;
     text-decoration: none;
-    margin-left: 20px;
-    margin-right: 5px;
     font-weight: bold;
+    font-size: 1.2rem;
+    align-items: center;
+    transition: all 0.5s ease;
 }
-
-
 
 /* Page Control */
 .page { 
