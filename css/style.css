@@ -1,5 +1,5 @@
 :root {
-    --primary: #2c3e50;
+    --primary: #7a98b5;
     --accent: #e67e22;
     --light: #f4f4f4;
 }
@@ -16,22 +16,55 @@ body {
     justify-content: space-between;
     align-items: center;
     background: var(--primary);
-    padding: 1rem 5%;
+    padding: 10px 10px 10px 0px; /* Top, Right, Bottom, Left */
     color: white;
 }
 
-#logo { height: 40px; }
-.nav-links { display: flex; list-style: none; }
+.brand-name {
+    font-family: 'Archivo Black', sans-serif;
+    font-style: italic;
+    font-size: 1.5rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    margin-left: 5px;
+}
+
+#logo { 
+    height: 60px; 
+}
+
+.logo-container {
+    margin-left: 10px;
+}
+
+.nav-links { 
+    display: flex; 
+    list-style: none; 
+}
+
+.nav-links li a:hover {
+    color: #f1994c; 
+}
 .nav-links li a {
     color: white;
     text-decoration: none;
     margin-left: 20px;
+    margin-right: 5px;
     font-weight: bold;
 }
 
+
+
 /* Page Control */
-.page { display: none; padding: 50px 10%; text-align: center; }
-.page.active { display: block; }
+.page { 
+    display: none; 
+    padding: 50px 10%; 
+    text-align: center; 
+}
+
+.page.active { 
+    display: block; 
+}
 
 /* Home Section */
 .hero-image img {
@@ -60,4 +93,10 @@ input[type="text"], input[type="email"], textarea {
     border-radius: 4px;
 }
 
-.btn-submit { background: var(--accent); color: white; border: none; padding: 10px 20px; cursor: pointer; }
+.btn-submit { 
+    background: var(--accent); 
+    color: white; 
+    border: none; 
+    padding: 10px 20px; 
+    cursor: pointer; 
+}
