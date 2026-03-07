@@ -1,50 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-        <title>WAI Films Lab</title>
         <meta charset="utf-8" />
-        <meta name="language" content="english" />
-        <meta name="keywords" content="Accessibility,Lab,Tasks" />
-        <meta name="description" content="WAI Form Task" />
+        <title>WAI Films Lab | Melbourne</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
+<header>
+<nav class="navbar">
+        <div class="logo-container">
         <img id="logo" src="images/wai-global.png" alt="WAI Logo" />
-        <header>
-                <nav class="navbar">
-                <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#formtask">Checkout</a></li>
-                </ul>
-                </nav>
-        </header>
-        <form method="post" action="http://mercury.swin.edu.au/it000000/formtest.php">
-                <p>Contact Information</p>
-                <p> Name:
-                        <input type="text" name="cname" id="cname" /></p>
-                <p> E-mail Address:
-                        <input type="text" name="cemail" id="cemail" /></p>
-                <p> Mailing Address:<br />
-                        <textarea name="caddr" id="caddr" rows="4" cols="40"></textarea></p>
-                <p>Credit Card Information</p>
-                <p>
-                        <label><input type="radio" name="card" id="cvisa" value="visa" /> Visa</label>
-                        <label><input type="radio" name="card" id="cmc" value="mc" /> MasterCard</label><br />
+        <span class="brand-name">WAI Films</span>
+        </div>
+        <ul class="nav-links">
+        <li><a href="#" onclick="showPage('home')">Home</a></li>
+        <li><a href="#" onclick="showPage('services')">Services</a></li>
+        <li><a href="#" onclick="showPage('checkout')">Checkout</a></li>
+        </ul>
+</nav>
+</header>
 
-                        <label>Number: <input type="text" name="number" id="cnumber"/></label><br />
-                        <label>Expiry: <input type="text" name="expiry" id="cexpiry"/></label>
-                </p>
-                <p>
-                        <input type="submit" value="Submit order" /> <input type="reset" value="Clear order" />
-                </p>
+<main id="content">
+<section id="home" class="page active">
+        <div class="hero-image">
+        <img src="/images/film.jpg" alt="Film Lab Melbourne">
+        </div>
+        <div class="intro-text">
+        <h1>Welcome to WAI Films Lab</h1>
+        <p>Nằm tại trung tâm Melbourne, chúng tôi là nơi đam mê nhiếp ảnh film được tỏa sáng. Chúng tôi cung cấp dịch vụ tráng rọi chuyên nghiệp và các dòng film đa dạng cho mọi nhiếp ảnh gia.</p>
+        </div>
+</section>
+
+<section id="services" class="page">
+        <h2>Our Services</h2>
+        <div class="services-grid">
+        <div class="service-card">
+                <h3>Film Sales</h3>
+                <p>Kodak Portra 400, Fujifilm C200, Ilford HP5 và nhiều loại film 35mm/120 khác.</p>
+        </div>
+        <div class="service-card">
+                <h3>Develop & Scan</h3>
+                <p>Tráng C41, B&W, E6 với máy quét Noritsu chất lượng cao.</p>
+        </div>
+        </div>
+</section>
+
+<section id="checkout" class="page">
+        <h2>Checkout</h2>
+        <form id="orderForm" method="post" action="http://mercury.swin.edu.au/it000000/formtest.php">
+        <div class="form-group">
+                <label for="cname">Name</label>
+                <input type="text" name="cname" id="cname" required />
+        </div>
+        <div class="form-group">
+                <label for="cemail">Email</label>
+                <input type="email" name="cemail" id="cemail" required />
+        </div>
+        <div class="form-group">
+                <label for="caddr">Mailing Address</label>
+                <textarea name="caddr" id="caddr" rows="3"></textarea>
+        </div>
+        <div class="payment-section">
+                <p>Payment Method</p>
+                <div class="radio-group">
+                <input type="radio" name="card" id="cvisa" value="visa" checked /> Visa
+                <input type="radio" name="card" id="cmc" value="mc" /> MasterCard
+                </div>
+                <input type="text" name="number" id="cnumber" placeholder="Card Number" />
+                <input type="text" name="expiry" id="cexpiry" placeholder="MM/YY" />
+        </div>
+        <div class="buttons">
+                <button type="submit" class="btn-submit">Submit Order</button>
+                <button type="reset" class="btn-reset">Clear</button>
+        </div>
         </form>
+</section>
+</main>
 
 <footer>
-        <div class="footer-bottom">
-                <p>&copy; Lab 01 - COS30043 - Hoang Minh Tuan Nguyen. All rights reserved.</p>
-        </div>
+<p>&copy; 2026 Lab 01 - COS30043 - Hoang Minh Tuan Nguyen.</p>
 </footer>
+
 <script src="js/app.js"></script>
 </body>
 </html>
