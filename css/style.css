@@ -86,7 +86,6 @@ main {
 .page { 
     display: none; 
     padding: 50px 10%; 
-    text-align: center; 
 }
 
 .page.active { 
@@ -94,6 +93,9 @@ main {
 }
 
 /* Home Section */
+#home {
+    text-align: center;
+}
 .hero-image img {
     width: 80%;
     max-height: 400px;
@@ -101,7 +103,42 @@ main {
     border-radius: 10px;
 }
 
-/* Form Styles */
+/*Services section*/
+.table-container {
+    margin-top: 30px;
+    overflow-x: auto;
+    padding: 0 5%;
+}
+
+.price-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #fff;
+    color: #1a1a1a;
+    border: 2px solid #1a1a1a; /* Bold outer border */
+}
+
+.price-table thead {
+    background-color: #1a1a1a;
+    color: #ffffff;
+}
+
+.price-table th {
+    padding: 20px;
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: 1.1rem;
+    text-align: left;
+}
+
+.price-table td {
+    padding: 15px 20px;
+    border-bottom: 1px solid #ddd;
+    font-size: 1rem;
+}
+
+/*Form styles*/
 #orderForm {
     max-width: 500px;
     margin: auto;
