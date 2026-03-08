@@ -6,7 +6,7 @@
 
 html, body {
     font-family: 'Segoe UI', sans-serif;
-    height: 100%; /*force the base HTML and Body elements to span the full height of the browser window*/
+    height: 100%; /*force the base HTML and body elements to span the full height of the browser window*/
     margin: 0; /*remove default browser spacing*/
     line-height: 1.6;
 }
@@ -14,14 +14,14 @@ html, body {
 body {
     display: flex;
     flex-direction: column; /*stack the children vertically*/
-    min-height: 100vh;      /*ensure the body is at least 100% of the screen height*/
+    min-height: 100vh;      /*ensure the body is always at least 100% of the screen height*/
 }
 
 main {
     flex: 1; /*the main space for content should occupy all the remaining space in the body*/
 }
 
-/* Navbar */
+/*navbar*/
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -31,7 +31,6 @@ main {
     align-items: center;
     background: var(--primary);
     color: white;
-    
 }
 
 .brand-name {
@@ -79,7 +78,7 @@ main {
     transition: all 0.5s ease;
 }
 
-/* Page Control */
+/*page*/
 #content {
     padding-top: 60px;
 }
@@ -92,18 +91,18 @@ main {
     display: block; 
 }
 
-/* Home Section */
+/*home section*/
 #home {
     text-align: center;
 }
 .hero-image img {
-    width: 80%;
-    max-height: 400px;
+    width: 100%;
+    max-height: 500px;
     object-fit: cover;
     border-radius: 10px;
 }
 
-/*Services section*/
+/*services section*/
 .table-container {
     margin-top: 30px;
     overflow-x: auto;
@@ -138,33 +137,22 @@ main {
     font-size: 1rem;
 }
 
-/*Form styles*/
+/*form section*/
 #orderForm {
+    background: var(--light);
     max-width: 500px;
     margin: auto;
-    text-align: left;
-    background: var(--light);
-    padding: 20px;
+    padding: 30px;
     border-radius: 8px;
 }
 
-.form-group { margin-bottom: 15px; }
 input[type="text"], input[type="email"], textarea {
-    width: 100%;
+    width: 95%;
     padding: 10px;
     margin-top: 5px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
 }
 
-.btn-submit { 
-    background: var(--accent); 
-    color: white; 
-    border: none; 
-    padding: 10px 20px; 
-    cursor: pointer; 
-}
-
+/*footer*/
 footer {
     flex-shrink: 0;
     text-align: center;
