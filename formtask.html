@@ -34,7 +34,7 @@
 </section>
 
 <section id="services" class="page">
-        <h1>Our Services</h1>
+        <h2>Our Services</h2>
         <div class="services-grid">
         <div class="service-card">
                 <h3>Film Sales</h3>
@@ -96,6 +96,7 @@
 <section id="checkout" class="page">
         <h2>Checkout</h2>
         <form id="orderForm" method="post" action="http://mercury.swin.edu.au/it000000/formtest.php">
+        <fieldset>
         <div class="form-group">
                 <label for="cname">Name</label>
                 <input type="text" name="cname" id="cname" required />
@@ -109,14 +110,20 @@
                 <textarea name="caddr" id="caddr" rows="3"></textarea>
         </div>
         <div class="payment-section">
-                <p>Payment Method</p>
+                <legend>Payment Method</legend>
                 <div class="radio-group">
-                <input type="radio" name="card" id="cvisa" value="visa" checked /> Visa
-                <input type="radio" name="card" id="cmc" value="mc" /> MasterCard
+                <input type="radio" name="card" id="cvisa" value="visa" checked />
+                <label for="cvisa">Visa</label>
+                <input type="radio" name="card" id="cmc" value="mc" />
+                <label for="cmc">MasterCard</label>
                 </div>
-                <input type="text" name="number" id="cnumber" placeholder="Card Number" />
+                <label for="cnumber">Card Number</label>
+                <input type="text" name="number" id="cnumber" placeholder="Please enter your Card No." />
+                <label for="cexpiry">Expiry Date</label>
                 <input type="text" name="expiry" id="cexpiry" placeholder="MM/YY" />
         </div>
+        </fieldset>
+        
         <div class="buttons">
                 <button type="submit" class="btn-submit">Submit Order</button>
                 <button type="reset" class="btn-reset">Clear</button>
@@ -126,7 +133,7 @@
 </main>
 
 <footer>
-        <p>&copy; 2026 Lab 01 - COS30043 - Hoang Minh Tuan Nguyen.</p>
+        <p>&copy; 2026 Semester 1 - Lab 01 - COS30043 - Hoang Minh Tuan Nguyen. All rights reserved.</p>
 </footer>
 
 <script src="js/app.js"></script>
