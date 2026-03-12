@@ -10,5 +10,5 @@ function showPage(pageId) {
     }
 }
 
-//defaultly show home page
+//show home page by default
 window.onload = () => showPage('home');
