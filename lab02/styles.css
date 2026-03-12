@@ -1,12 +1,29 @@
 .grid-demo { 
     background-color: #e7f1ff; 
     border: 1px solid #b6d4fe; 
-    padding: 12px; 
-    margin-bottom: 10px; 
+    padding: 20px; 
+    margin-bottom: 20px; 
     text-align: center; 
     border-radius: 4px; 
+    transition: transform 0.2s;
 } 
+
+.grid-demo:hover {
+    background-color: #cfe2ff;
+}
 
 #main_img {
     width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+.icon-box {
+    font-size: 2rem;
+    color: #0d6efd;
+    margin-bottom: 15px;
+}
+
+.row {
+    margin-bottom: 10px;
 }
