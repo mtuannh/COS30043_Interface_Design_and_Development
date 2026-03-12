@@ -6,3 +6,7 @@
     text-align: center; 
     border-radius: 4px; 
 } 
+
+#main_img {
+    width: 100%;
+}
