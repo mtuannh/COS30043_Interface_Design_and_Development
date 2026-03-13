@@ -1,15 +1,9 @@
 .grid-demo { 
     background-color: #e7f1ff; 
     border: 1px solid #b6d4fe; 
-    padding: 20px; 
-    margin-bottom: 20px; 
+    padding: 20px;
     text-align: center; 
-    border-radius: 4px; 
-    transition: transform 0.2s;
-} 
-
-.grid-demo:hover {
-    background-color: #cfe2ff;
+    border-radius: 4px;
 }
 
 #main_img {
