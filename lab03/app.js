@@ -1,33 +1,10 @@
-// Event data (based on events.txt)
-const events = [
-  { eventid: 'EVT10001', eventname: 'Tech Innovations Conference', category: 'Technology', durationhour: 8 },
-  { eventid: 'EVT10002', eventname: 'Startup Pitch Day', category: 'Business', durationhour: 6 },
-  { eventid: 'EVT10003', eventname: 'AI & Machine Learning Summit', category: 'Technology', durationhour: 10 },
-  { eventid: 'EVT10004', eventname: 'Cybersecurity Workshop', category: 'Technology', durationhour: 4 },
-  { eventid: 'EVT10005', eventname: 'Digital Marketing Bootcamp', category: 'Marketing', durationhour: 6 },
-  { eventid: 'EVT10006', eventname: 'Blockchain and Cryptocurrency', category: 'Finance', durationhour: 5 },
-  { eventid: 'EVT10007', eventname: 'Entrepreneurship Forum', category: 'Business', durationhour: 7 },
-  { eventid: 'EVT10008', eventname: 'Data Science Hackathon', category: 'Technology', durationhour: 12 },
-  { eventid: 'EVT10009', eventname: 'Leadership and Management Summit', category: 'Business', durationhour: 9 },
-  { eventid: 'EVT10010', eventname: 'E-commerce Strategies', category: 'Marketing', durationhour: 6 },
-  { eventid: 'EVT10011', eventname: 'AI for Business', category: 'Business', durationhour: 8 },
-  { eventid: 'EVT10012', eventname: 'IoT & Smart Devices Expo', category: 'Technology', durationhour: 7 },
-  { eventid: 'EVT10013', eventname: 'Brand Strategy and Growth', category: 'Marketing', durationhour: 5 },
-  { eventid: 'EVT10014', eventname: 'Investment and Wealth Management', category: 'Finance', durationhour: 6 },
-  { eventid: 'EVT10015', eventname: 'Financial Technology (FinTech) Summit', category: 'Finance', durationhour: 8 },
-  { eventid: 'EVT10016', eventname: 'AI Ethics and Regulations', category: 'Technology', durationhour: 4 },
-  { eventid: 'EVT10017', eventname: 'Business Analytics Workshop', category: 'Business', durationhour: 6 },
-  { eventid: 'EVT10018', eventname: 'SEO and Content Marketing', category: 'Marketing', durationhour: 7 },
-  { eventid: 'EVT10019', eventname: 'Cryptocurrency Investment Strategies', category: 'Finance', durationhour: 9 },
-  { eventid: 'EVT10020', eventname: 'Social Media Marketing Trends', category: 'Marketing', durationhour: 5 }
-];
-
 const { createApp, computed } = Vue;
 
 createApp({
   data() {
     return {
-      events,
+      activePage: 'event-info',
+      events: [],
       filters: {
         id: '',
         name: '',
@@ -40,9 +17,11 @@ createApp({
         confirmPassword: '',
         category: '',
         eventId: ''
-      },
-      summary: null
+      }
     };
+  },
+  created() {
+    this.loadEvents();
   },
   computed: {
     categories() {
@@ -91,6 +70,26 @@ createApp({
     eventsForSelectedCategory() {
       if (!this.form.category) return [];
       return this.events.filter(ev => ev.category === this.form.category);
+    },
+    liveSummary() {
+      if (this.passwordMismatch) {
+        return null;
+      }
+
+      if (!this.form.username || !this.form.category || !this.form.eventId) {
+        return null;
+      }
+
+      const selectedEvent = this.events.find(ev => ev.eventid === this.form.eventId);
+      if (!selectedEvent) {
+        return null;
+      }
+
+      return {
+        username: this.form.username,
+        category: this.form.category,
+        eventname: selectedEvent.eventname
+      };
     }
   },
   watch: {
@@ -100,21 +99,21 @@ createApp({
     }
   },
   methods: {
-    submitForm() {
-      if (this.passwordMismatch) {
-        return;
-      }
+    async loadEvents() {
+      try {
+        const response = await fetch('events.txt');
+        if (!response.ok) {
+          throw new Error(`Failed to load events.txt: ${response.status}`);
+        }
 
-      const selectedEvent = this.events.find(ev => ev.eventid === this.form.eventId);
-      if (!selectedEvent) {
-        return;
+        const text = await response.text();
+        // events.txt is a JavaScript-like array literal, not strict JSON.
+        const parsed = Function(`"use strict"; return (${text});`)();
+        this.events = Array.isArray(parsed) ? parsed : [];
+      } catch (error) {
+        console.error('Unable to load events:', error);
+        this.events = [];
       }
-
-      this.summary = {
-        username: this.form.username,
-        category: this.form.category,
-        eventname: selectedEvent.eventname
-      };
     }
   }
 }).mount('#app');

@@ -1,0 +1,45 @@
+body {
+  background-color: #f5f7fb;
+}
+
+.card {
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
+  border: none;
+}
+
+.form-label {
+  font-weight: 500;
+}
+
+.table-responsive {
+  max-height: 420px;
+}
+
+.password-mismatch {
+  font-size: 0.9rem;
+}
+
+.top-nav-wrap {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.top-nav {
+  background: #ffffff;
+  border-radius: 999px;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
+  padding: 0.35rem;
+}
+
+.top-nav .nav-link {
+  border-radius: 999px;
+  color: #0d6efd;
+  font-weight: 500;
+  padding: 0.45rem 1rem;
+}
+
+.top-nav .nav-link.active {
+  background: #0d6efd;
+  color: #ffffff;
+}

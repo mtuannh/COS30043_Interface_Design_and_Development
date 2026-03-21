@@ -12,25 +12,7 @@
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
     crossorigin="anonymous"
   />
-
-  <style>
-    body {
-      background-color: #f5f7fb;
-    }
-    .card {
-      box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
-      border: none;
-    }
-    .form-label {
-      font-weight: 500;
-    }
-    .table-responsive {
-      max-height: 420px;
-    }
-    .password-mismatch {
-      font-size: 0.9rem;
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
@@ -39,12 +21,38 @@
       <h2 class="fw-bold mb-1">Event Finder & Registration</h2>
     </div>
 
-    <div class="row g-4">
-      <!-- Event Table & Search -->
-      <div class="col-lg-7">
-        <div class="card h-100">
+    <!-- Top-center navigation -->
+    <div class="top-nav-wrap">
+      <ul class="nav top-nav">
+        <li class="nav-item">
+          <button
+            type="button"
+            class="nav-link"
+            :class="{ active: activePage === 'event-info' }"
+            @click="activePage = 'event-info'"
+          >
+            Event Information
+          </button>
+        </li>
+        <li class="nav-item">
+          <button
+            type="button"
+            class="nav-link"
+            :class="{ active: activePage === 'registration-form' }"
+            @click="activePage = 'registration-form'"
+          >
+            Registration Form
+          </button>
+        </li>
+      </ul>
+    </div>
+
+    <div class="row justify-content-center">
+      <!-- Page 1: Event Table & Search -->
+      <div class="col-lg-10" v-if="activePage === 'event-info'">
+        <div class="card">
           <div class="card-body">
-            <h5 class="card-title mb-3">1. Event Information</h5>
+            <h5 class="card-title mb-3">Event Information</h5>
 
             <!-- Search controls -->
             <div class="row g-3 mb-3">
@@ -131,13 +139,13 @@
         </div>
       </div>
 
-      <!-- Registration Form -->
-      <div class="col-lg-5">
-        <div class="card h-100">
+      <!-- Page 2: Registration Form -->
+      <div class="col-lg-8" v-if="activePage === 'registration-form'">
+        <div class="card">
           <div class="card-body">
-            <h5 class="card-title mb-3">2. Registration Form</h5>
+            <h5 class="card-title mb-3">Registration Form</h5>
 
-            <form @submit.prevent="submitForm">
+            <form>
               <div class="mb-3">
                 <label class="form-label" for="username">Username</label>
                 <input
@@ -186,15 +194,7 @@
                     v-for="c in categories"
                     :key="'reg-' + c.value"
                   >
-                    <input
-                      class="form-check-input"
-                      type="radio"
-                      name="regCategory"
-                      :id="'reg-' + c.value"
-                      v-model="form.category"
-                      :value="c.value"
-                      required
-                    />
+                    <input class="form-check-input" type="radio" name="regCategory" :id="'reg-' + c.value" v-model="form.category" :value="c.value" required />
                     <label class="form-check-label" :for="'reg-' + c.value">
                       {{ c.label }}
                     </label>
@@ -223,24 +223,17 @@
                 </select>
               </div>
 
-              <button
-                type="submit"
-                class="btn btn-primary w-100"
-                :disabled="passwordMismatch"
-              >
-                Register
-              </button>
             </form>
 
             <!-- Summary -->
             <div
-              v-if="summary"
+              v-if="liveSummary"
               class="alert alert-success mt-3 mb-0"
               role="alert"
             >
-              <div><strong>Username:</strong> {{ summary.username }}</div>
-              <div><strong>Category:</strong> {{ summary.category }}</div>
-              <div><strong>Event:</strong> {{ summary.eventname }}</div>
+              <div><strong>Username:</strong> {{ liveSummary.username }}</div>
+              <div><strong>Category:</strong> {{ liveSummary.category }}</div>
+              <div><strong>Event:</strong> {{ liveSummary.eventname }}</div>
             </div>
           </div>
         </div>
