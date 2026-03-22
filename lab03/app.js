@@ -94,7 +94,7 @@ createApp({
   },
   watch: {
     'form.category'() {
-      // Reset selected event when category changes
+      //reset selected event when category changed
       this.form.eventId = '';
     }
   },
@@ -107,7 +107,6 @@ createApp({
         }
 
         const text = await response.text();
-        // events.txt is a JavaScript-like array literal, not strict JSON.
         const parsed = Function(`"use strict"; return (${text});`)();
         this.events = Array.isArray(parsed) ? parsed : [];
       } catch (error) {
