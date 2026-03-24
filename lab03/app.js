@@ -3,15 +3,15 @@ const { createApp, computed } = Vue;
 createApp({
   data() {
     return {
-      activePage: 'event-info',
-      events: [],
-      filters: {
+      activePage: 'event-info', //controls which page is shown
+      events: [], //an empty array to hold the events loaded from events.txt
+      filters: { //holds the current filter values
         id: '',
         name: '',
         duration: null,
         category: 'All'
       },
-      form: {
+      form: { //holds the form input values, including validation fields like "confirmPassword"
         username: '',
         password: '',
         confirmPassword: '',
@@ -23,8 +23,8 @@ createApp({
   created() {
     this.loadEvents();
   },
-  computed: {
-    categories() {
+  computed: { //computed properties to derive data for the UI
+    categories() { //returns the list of categories for the filter dropdown
       return [
         { value: 'Technology', label: 'Technology' },
         { value: 'Business', label: 'Business' },
@@ -32,19 +32,19 @@ createApp({
         { value: 'Finance', label: 'Finance' }
       ];
     },
-    categoriesWithAll() {
+    categoriesWithAll() { //returns the list of categories for the filter dropdown, including an "All" option
       return [
         { value: 'All', label: 'All' },
         ...this.categories
       ];
     },
-    filteredEvents() {
+    filteredEvents() { //returns the list of events filtered based on the current filter values
       return this.events.filter(ev => {
-        const idMatch = this.filters.id
+        const idMatch = this.filters.id //if filter has value, check if eventid includes it (case-insensitive), otherwise match all
           ? ev.eventid.toLowerCase().includes(this.filters.id.toLowerCase())
           : true;
 
-        const nameMatch = this.filters.name
+        const nameMatch = this.filters.name 
           ? ev.eventname.toLowerCase().includes(this.filters.name.toLowerCase())
           : true;
 
@@ -53,7 +53,7 @@ createApp({
             ? ev.durationhour === Number(this.filters.duration)
             : true;
 
-        const categoryMatch =
+        const categoryMatch = //if filter category is "All", match all, otherwise check if event category matches filter category
           this.filters.category === 'All'
             ? true
             : ev.category === this.filters.category;
@@ -61,13 +61,13 @@ createApp({
         return idMatch && nameMatch && durationMatch && categoryMatch;
       });
     },
-    passwordMismatch() {
+    passwordMismatch() { //returns true if password and confirmPassword do not match, used for form validation
       if (!this.form.password && !this.form.confirmPassword) {
         return false;
       }
       return this.form.password !== this.form.confirmPassword;
     },
-    eventsForSelectedCategory() {
+    eventsForSelectedCategory() { //returns the list of events that belong to the category selected in the form
       if (!this.form.category) return [];
       return this.events.filter(ev => ev.category === this.form.category);
     },
@@ -99,7 +99,7 @@ createApp({
     }
   },
   methods: {
-    async loadEvents() {
+    async loadEvents() { //method to load events from events.txt using fetch API
       try {
         const response = await fetch('events.txt');
         if (!response.ok) {
@@ -115,5 +115,4 @@ createApp({
       }
     }
   }
-}).mount('#app');
-
+}).mount('#app'); //mount the Vue app to the element with id "app"
