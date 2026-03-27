@@ -35,6 +35,7 @@ createApp({
       this.message = `The correct number was ${this.numberToGuess}.`;
       this.gameEnded = true;
     },
+    
     checkGuess() {
       if (this.gameEnded) return;
 
@@ -42,6 +43,16 @@ createApp({
       const n = typeof raw === 'number' ? raw : Number(raw);
       if (raw === '' || raw === null || Number.isNaN(n)) {
         this.message = 'Please enter a valid number.';
+        return;
+      }
+
+      if (n>100 || n<1) {
+        this.message = "Please enter a number between 1 and 100.";
+        return;
+      }
+
+      if (this.guesses.includes(n)) {
+        this.message = 'You already guessed that number!';
         return;
       }
 
