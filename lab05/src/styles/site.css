@@ -70,7 +70,3 @@ body {
   display: flex;
   gap: 0.5rem;
 }
-
-.add-task-btn {
-  background-color: #000000;
-}
