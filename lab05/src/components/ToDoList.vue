@@ -2,10 +2,7 @@
 import { ref } from "vue";
 
 const newTask = ref("");
-const tasks = ref([
-  { id: 1, text: "Read lab sheet", highPriority: false },
-  { id: 2, text: "Build Vue components", highPriority: true }
-]);
+const tasks = ref([]);
 
 function addTask() {
   const trimmedTask = newTask.value.trim();
@@ -31,10 +28,10 @@ function togglePriority(task) {
 </script>
 
 <template>
-  <div class="section-card p-3">
-    <h3 class="mb-3">To-Do List</h3>
+  <div class="section-card todo-section">
+    <h3 class="section-title">To-Do List</h3>
 
-    <div class="input-group mb-3">
+    <div class="input-group todo-input-group">
       <input
         v-model="newTask"
         type="text"
@@ -42,20 +39,20 @@ function togglePriority(task) {
         placeholder="Enter a new task"
         @keyup.enter="addTask"
       />
-      <button class="btn btn-primary" @click="addTask">Add</button>
+      <button class="btn btn-success add-task-btn" @click="addTask">Add</button>
     </div>
 
     <ul class="list-group">
       <li
         v-for="task in tasks"
         :key="task.id"
-        class="list-group-item d-flex justify-content-between align-items-center"
+        class="list-group-item todo-item"
       >
         <span>
           {{ task.text }}
           {{ task.highPriority ? "(High Priority)" : "(Low Priority)" }}
         </span>
-        <div class="d-flex gap-2">
+        <div class="todo-actions">
           <button class="btn btn-sm btn-outline-danger" @click="deleteTask(task.id)">
             Delete
           </button>
