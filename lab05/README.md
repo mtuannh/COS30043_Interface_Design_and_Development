@@ -1,32 +1,19 @@
-# Lab 05 — Components and Router
-## Run the project from scratch
+# Lab 05 - Components and Router
 
-### 1. Go to the project folder
+## Run with Go Live (no CDN)
 
-In the terminal, `cd` into the folder that contains `package.json` (the `lab05` directory).
+1. Open the `lab05` folder in VS Code/Cursor.
+2. Make sure `node_modules` exists in this folder (run `npm install` once if needed).
+3. Right-click `index.html` and click **Go Live**.
 
-Example on Windows (adjust the path if yours differs):
+The app now uses only local files:
+- Vue and Vue Router from `node_modules`
+- Bootstrap CSS from `node_modules`
+- Custom styles from `src/styles/site.css`
 
-```powershell
-cd "D:\studydocuments\3rd year\COS30045 - Interface Design\lab05"
-```
-
-### 2. Install dependencies
-
-Run **once** after cloning or copying the project, or after deleting `node_modules`:
+## Optional: Run with Vite dev server
 
 ```bash
 npm install
-```
-
-This installs Vue, Vue Router, Bootstrap, and Vite as defined in `package.json`.
-
-### 3. Start the development server
-
-```bash
 npm run dev
 ```
-
-The terminal prints a local URL (often `http://localhost:5173`). Open it in your browser.
-
-- **Stop the server:** press `Ctrl + C` in the terminal.

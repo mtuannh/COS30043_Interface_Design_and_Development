@@ -1,0 +1,25 @@
+body {
+  background-color: #f8f9fa;
+}
+
+.carousel-img {
+  height: 420px;
+  object-fit: cover;
+}
+
+.destination-img {
+  height: 180px;
+  object-fit: cover;
+}
+
+.about-img {
+  max-height: 280px;
+  width: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 767px) {
+  .carousel-img {
+    height: 240px;
+  }
+}

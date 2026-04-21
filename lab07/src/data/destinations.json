@@ -1,0 +1,98 @@
+[
+  {
+    "id": 1,
+    "name": "Swiss Alps",
+    "country": "Switzerland",
+    "description": "Snowy mountains and beautiful hiking trails.",
+    "category": "Mountain",
+    "image": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=900&q=80"
+  },
+  {
+    "id": 2,
+    "name": "Bali Beach",
+    "country": "Indonesia",
+    "description": "Relaxing tropical beach with clear water.",
+    "category": "Beach",
+    "image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=80"
+  },
+  {
+    "id": 3,
+    "name": "Tokyo Lights",
+    "country": "Japan",
+    "description": "Modern city life, neon streets, and food.",
+    "category": "City",
+    "image": "https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=900&q=80"
+  },
+  {
+    "id": 4,
+    "name": "Great Ocean Road",
+    "country": "Australia",
+    "description": "Scenic coastal drive with ocean views.",
+    "category": "Ocean",
+    "image": "https://images.unsplash.com/photo-1473116763249-2faaef81ccda?auto=format&fit=crop&w=900&q=80"
+  },
+  {
+    "id": 5,
+    "name": "Banff National Park",
+    "country": "Canada",
+    "description": "Blue lakes and mountains in a peaceful park.",
+    "category": "Mountain",
+    "image": "https://images.unsplash.com/photo-1508264165352-258a6f82f2d7?auto=format&fit=crop&w=900&q=80"
+  },
+  {
+    "id": 6,
+    "name": "Santorini",
+    "country": "Greece",
+    "description": "White houses and sunset views over the sea.",
+    "category": "Beach",
+    "image": "https://images.unsplash.com/photo-1467269204594-9661b134dd2b?auto=format&fit=crop&w=900&q=80"
+  },
+  {
+    "id": 7,
+    "name": "New York",
+    "country": "USA",
+    "description": "Famous city skyline and urban attractions.",
+    "category": "City",
+    "image": "https://images.unsplash.com/photo-1496588152823-86ff7695d6a8?auto=format&fit=crop&w=900&q=80"
+  },
+  {
+    "id": 8,
+    "name": "Maldives",
+    "country": "Maldives",
+    "description": "Crystal clear ocean and overwater villas.",
+    "category": "Ocean",
+    "image": "https://images.unsplash.com/photo-1514282401047-d79a71a590e8?auto=format&fit=crop&w=900&q=80"
+  },
+  {
+    "id": 9,
+    "name": "Queenstown",
+    "country": "New Zealand",
+    "description": "Adventure town surrounded by mountains.",
+    "category": "Mountain",
+    "image": "https://images.unsplash.com/photo-1464823063530-08f10ed1a2dd?auto=format&fit=crop&w=900&q=80"
+  },
+  {
+    "id": 10,
+    "name": "Barcelona",
+    "country": "Spain",
+    "description": "Coastal city with culture and architecture.",
+    "category": "City",
+    "image": "https://images.unsplash.com/photo-1539037116277-4db20889f2d4?auto=format&fit=crop&w=900&q=80"
+  },
+  {
+    "id": 11,
+    "name": "Phuket",
+    "country": "Thailand",
+    "description": "Popular island destination with beaches.",
+    "category": "Beach",
+    "image": "https://images.unsplash.com/photo-1589394815804-964ed0be2eb5?auto=format&fit=crop&w=900&q=80"
+  },
+  {
+    "id": 12,
+    "name": "Sydney Harbour",
+    "country": "Australia",
+    "description": "Ocean-side city with iconic landmarks.",
+    "category": "Ocean",
+    "image": "https://images.unsplash.com/photo-1506973035872-a4ec16b8d3e3?auto=format&fit=crop&w=900&q=80"
+  }
+]

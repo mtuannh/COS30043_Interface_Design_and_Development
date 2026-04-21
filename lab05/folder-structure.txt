@@ -1,0 +1,19 @@
+lab05/
+│
+├── index.html
+├── jobs.txt
+│
+├── css/
+│   └── bootstrap.min.css
+│
+├── js/
+│   ├── vue.global.js
+│   ├── vue-router.global.js
+│   ├── main.js
+│   ├── router.js
+│   └── components/
+│       ├── App.js
+│       ├── JobList.js
+│       ├── JobDetail.js
+│       ├── JobOverview.js
+│       └── ToDoList.js
