@@ -33,11 +33,11 @@
   },
   {
     "id": 5,
-    "name": "Banff National Park",
-    "country": "Canada",
-    "description": "Blue lakes and mountains in a peaceful park.",
-    "category": "Mountain",
-    "image": "https://images.unsplash.com/photo-1508264165352-258a6f82f2d7?auto=format&fit=crop&w=900&q=80"
+    "name": "Ha Long Bay",
+    "country": "Vietnam",
+    "description": "Stunning bay with limestone islands and emerald water.",
+    "category": "Ocean",
+    "image": "https://images.unsplash.com/photos/a-group-of-boats-floating-on-top-of-a-body-of-water-kG7pOXbBfNs"
   },
   {
     "id": 6,

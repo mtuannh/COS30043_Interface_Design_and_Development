@@ -1,12 +1,15 @@
+//link to the form and the toggle button in HTML
 const form = document.getElementById("applicationForm");
 const toggleTermsBtn = document.getElementById("toggleTermsBtn");
 const termsBox = document.getElementById("termsBox");
 
+//function to set error message for a specific field
 function setError(id, message) {
   const errorElement = document.getElementById(id + "Error");
   errorElement.textContent = message;
 }
 
+//function to clear all error messages before validating the form again
 function clearAllErrors() {
   const errorElements = document.querySelectorAll(".error");
   errorElements.forEach((item) => {
@@ -14,12 +17,14 @@ function clearAllErrors() {
   });
 }
 
+//if the date of birth is over 16 years old 
 function isAtLeast16(dobValue) {
   const dob = new Date(dobValue);
   if (Number.isNaN(dob.getTime())) {
     return false;
   }
 
+  //calculate age based on the current date and the date of birth
   const today = new Date();
   let age = today.getFullYear() - dob.getFullYear();
   const monthDiff = today.getMonth() - dob.getMonth();
@@ -31,6 +36,7 @@ function isAtLeast16(dobValue) {
   return age >= 16;
 }
 
+//event listener for form submission to validate the form fields
 form.addEventListener("submit", function (event) {
   clearAllErrors();
   let isValid = true;
@@ -113,6 +119,7 @@ form.addEventListener("submit", function (event) {
   }
 });
 
+//event listener for the toggle button to show/hide the terms and conditions box
 toggleTermsBtn.addEventListener("click", function () {
   termsBox.classList.toggle("hidden");
 });

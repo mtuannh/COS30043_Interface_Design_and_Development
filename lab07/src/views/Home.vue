@@ -5,7 +5,7 @@
       This simple app helps you browse different destinations and find ideas for your next trip.
     </p>
 
-    <div id="travelCarousel" class="carousel slide shadow-sm rounded overflow-hidden mt-4">
+    <div id="travelCarousel" class="carousel slide shadow-sm rounded overflow-hidden mt-4" data-bs-ride="carousel">
       <div class="carousel-inner">
         <div class="carousel-item active">
           <img

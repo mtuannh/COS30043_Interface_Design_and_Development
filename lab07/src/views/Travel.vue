@@ -76,7 +76,6 @@ function resetAndSearch() {
     <div class="row g-3">
       <div v-for="destination in paginatedDestinations" :key="destination.id" class="col-12 col-sm-6 col-lg-4">
         <div class="card h-100 shadow-sm">
-          <img :src="destination.image" class="card-img-top destination-img" :alt="destination.name" />
           <div class="card-body">
             <h5 class="card-title">{{ destination.name }}</h5>
             <h6 class="card-subtitle mb-2 text-muted">{{ destination.country }}</h6>
